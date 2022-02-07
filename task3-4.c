@@ -15,9 +15,9 @@ int main()
   if (pid == -1) {
     printf("Error while forking.\n");
   } else if (pid == 0) {
-    execl("/bin/echo", "echo", "this is", "an echo", "message.", NULL);
+    execl("/bin/echo", "echo", "This is", "an echo", "message.", NULL);
   } else {
-    printf("Parent finished working.\n");
+    //printf("Parent finished working.\n");
     //exit(-1);
     waitpid(pid, &status, 0);
   }
