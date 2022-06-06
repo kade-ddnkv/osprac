@@ -10,7 +10,7 @@ void my_handler(int nsig) {
   int status;
   pid_t pid;
 
-  // waitpid, пока у процесса есть дети
+  // waitpid, пока у процесса есть завершенные дети
   // WNOHANG - return immediately if no child has exited.
   while ((pid = waitpid(-1, &status, WNOHANG)) > 0) {
     if ((status & 0xff) == 0) {
